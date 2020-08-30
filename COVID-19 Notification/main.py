@@ -13,15 +13,13 @@ def notifyme(title, message):
 
     )
 
-
+# function to get data from the URL
 def getData(url):
     r = requests.get(url)
     return r.text
 
 
 if __name__ == "__main__":
-    # notifyme("Corona Update", "lets stop this together")
-
     while True:
         myHtmlData = getData("https://www.worldometers.info/coronavirus/country/india/")
         soup = BeautifulSoup(myHtmlData, 'html.parser')
